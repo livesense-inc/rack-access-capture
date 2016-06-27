@@ -1,0 +1,74 @@
+AllCops:
+  Exclude:
+    - 'example/**/*'
+    - 'vendor/**/*'
+  Include:
+    - '**/*.rb'
+    - '**/*.rake'
+    - '**/*.gemspec'
+
+Lint/UnusedMethodArgument:
+  Exclude:
+    - 'lib/rack/access/capture/collector/abstract_adapter.rb'
+    - 'lib/rack/access/capture/collector/adapters.rb'
+    - 'lib/rack/access/capture/collector/console_adapter.rb'
+    - 'lib/rack/access/capture/watcher/adapters.rb'
+    - 'lib/rack/access/capture/watcher/internal_watcher_adapter.rb'
+    - 'spec/support/collector/collect_log_adapter.rb'
+    - 'spec/support/watcher/other_format_watcher_adapter.rb'
+    - 'spec/support/watcher/request_and_response_watcher_adapter.rb'
+    - 'spec/support/watcher/request_watcher_adapter.rb'
+    - 'spec/support/watcher/response_watcher_adapter.rb'
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/CyclomaticComplexity:
+  Max: 9
+
+Metrics/PerceivedComplexity:
+  Max: 9
+
+Metrics/LineLength:
+  Max: 200
+
+Metrics/MethodLength:
+  Max: 20
+
+Performance/RedundantMerge:
+  Exclude:
+    - 'lib/rack/access/capture/manager.rb'
+
+Style/BlockDelimiters:
+  Exclude:
+    - 'lib/rack/access/capture/collector/adapters.rb'
+    - 'lib/rack/access/capture/watcher/adapters.rb'
+    - 'spec/manager_spec.rb'
+    - 'spec/watcher/internal_watcher_adapter_spec.rb'
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/NumericLiterals:
+  MinDigits: 10
+
+Style/HashSyntax:
+  Enabled: false
+
+Style/MultilineBlockLayout:
+  Exclude:
+    - 'spec/config_spec.rb'
+    - 'spec/manager_spec.rb'
+    - 'spec/watcher/internal_watcher_adapter_spec.rb'
+
+Style/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Style/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+Style/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
