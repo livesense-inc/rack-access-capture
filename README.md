@@ -119,6 +119,19 @@ Set of output destination to the ``collector``.
     * ``console``: No settings.
     * ``fluentd``: Set the setting value of [fluent-logger-ruby](https://github.com/fluent/fluent-logger-ruby).
 
+#### **console** configuration ####
+
+``format``: If you specify a ``ltsv`` output in LTSV format. If you specify a ``json`` output in Json format. The default is ``json`` output.
+
+Use LTSV format.
+
+```yaml
+collector:
+  adapter: console
+  config:
+    format: ltsv
+```
+
 ### capture settings ###
 
 Set of customized capture function to the ``watcher``.
