@@ -15,11 +15,16 @@ module Rack
 
         def call(env)
           captured_request = @config._watcher.nil? ? {} : @config._watcher.request_capture(env)
+          began_at = Time.now.instance_eval { to_i + (usec / 1000000.0) }
+
           status_code, header, body = @app.call(env)
+        ensure
+          exec_time = Time.now.instance_eval { to_i + (usec / 1000000.0) } - began_at
           captured_response = @config._watcher.nil? ? {} : @config._watcher.response_capture(env, status_code, header)
 
           if !@config._collector.nil? && @config._collector.collect?(env)
             access_log = @config._internal_watcher.access_log(env, status_code, header)
+            access_log["app_exec_time"] = exec_time
             captured_access_log = merge_logs(captured_request, captured_response, access_log)
             @config._collector.collect(captured_access_log)
           end
