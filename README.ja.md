@@ -80,7 +80,7 @@ filter:
 デフォルト設定の場合、以下になります。
 
 ```
-{"status":200,"path":"/","method":"GET","params":"{}","device":"pc","os":"Mac OSX","browser":"Chrome","browser_ver":"50.0.2661.102","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36","remote_ip":"::1","time":1466588840,"accessed_at":1466588840}
+{"status":200,"path":"/","method":"GET","params":"{}","device":"pc","os":"Mac OSX","browser":"Chrome","browser_ver":"50.0.2661.102","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36","remote_ip":"::1","time":1466588840,"accessed_at":1466588840,"app_exec_time":3.8547658920288086}
 ```
 
 * ``status``: ステータスコード
@@ -95,6 +95,7 @@ filter:
 * ``remote_ip``: アクセス元IP
 * ``time``: キャプチャ実行時間
 * ``accessed_at``: アクセス時間
+* ``app_exec_time``: Rackアプリケーションの実行時間
 
 ## 設定 ##
 

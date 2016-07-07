@@ -87,7 +87,7 @@ filter:
 Default output format:
 
 ```
-{"status":200,"path":"/","method":"GET","params":"{}","device":"pc","os":"Mac OSX","browser":"Chrome","browser_ver":"50.0.2661.102","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36","remote_ip":"::1","time":1466588840,"accessed_at":1466588840}
+{"status":200,"path":"/","method":"GET","params":"{}","device":"pc","os":"Mac OSX","browser":"Chrome","browser_ver":"50.0.2661.102","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36","remote_ip":"::1","time":1466588840,"accessed_at":1466588840,"app_exec_time":3.8547658920288086}
 ```
 
 * ``status``: Response Status Code
@@ -102,6 +102,7 @@ Default output format:
 * ``remote_ip``: Originating IP address
 * ``time``: Capture execution time
 * ``accessed_at``: Access time
+* ``app_exec_time``: The rack application execution time in seconds. milli seconds are written after the decimal point.
 
 ## Configuration ##
 
