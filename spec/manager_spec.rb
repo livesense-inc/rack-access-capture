@@ -77,6 +77,7 @@ describe Rack::Access::Capture::Manager do
                                                                          "time" => accessed_at.to_i,
                                                                          "accessed_at" => accessed_at.to_i)
       }
+      it { expect(middleware.config._collector.collected_log).to have_key("app_exec_time") }
     end
 
     context 'default capture' do
