@@ -109,8 +109,22 @@ filter:
     * fuentdにキャプチャ内容を出力する``fluentd``
     * カスタマイズした出力先実装の場合、クラス名
 * config: adapterの設定内容を指定する
-    * ``console``: 設定内容無し
+    * ``console``: 下記の通り
     * ``fluentd``: [fluent-logger-ruby](https://github.com/fluent/fluent-logger-ruby)の設定値が設定可能
+
+#### console設定
+
+``format``: ``ltsv``を指定するとLTSV形式で出力。``json``を指定するとJson形式で出力する。デフォルトは``json``出力です。
+
+
+LTSV使用例
+
+```yaml
+collector:
+  adapter: console
+  config:
+    format: ltsv
+```
 
 ### キャプチャ設定 ###
 
