@@ -40,8 +40,8 @@ module Rack
 
         class BufferOverflowHandler
 
-          def initialize(log_dirirectory_path)
-            @log_directory_path = log_dirirectory_path
+          def initialize(log_directory_path)
+            @log_directory_path = log_directory_path
           end
 
           def flush(messages)
