@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '~> 2.0'
 
   spec.add_dependency 'woothee', '~> 1.4'
-  spec.add_dependency 'fluent-logger', '~> 0.5.1'
+  spec.add_dependency 'fluent-logger', ['>= 0.5.1', '< 0.7.0']
 
   spec.add_development_dependency 'bundler', '~> 1.12'
   spec.add_development_dependency 'rake', '~> 10.0'

@@ -35,11 +35,11 @@ module Rack
         config_accessor :collector, :watcher, :filter
 
         def initialize(config = {})
-          convertd_config = convert_hash(config)
+          converted_config = convert_hash(config)
 
-          self.collector = convertd_config["collector"] if convertd_config.key?("collector")
-          self.watcher = convertd_config["watcher"] if convertd_config.key?("watcher")
-          self.filter = convertd_config["filter"]
+          self.collector = converted_config["collector"] if converted_config.key?("collector")
+          self.watcher = converted_config["watcher"] if converted_config.key?("watcher")
+          self.filter = converted_config["filter"]
         end
 
         private
