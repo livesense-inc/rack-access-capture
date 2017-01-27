@@ -53,7 +53,7 @@ Additional settings by source code:
 
 ```ruby
 config.middleware.use Rack::Access::Capture::Manager do |config|
-  config.collector = { adapter: :fluentd, config: { host: 'localhost', port: 24224, tag: 'mytag'} }
+  config.collector = { adapter: :fluentd, config: { host: 'localhost', port: 24224, tag: 'mytag', exclude_user_agents: ["exclude_user_agent_1", "exclude_user_agent_2"] } }
   config.watcher = { adapter: 'MyWatcher' }
   config.filter = { params: ['params1', 'params2'] }
 end
@@ -72,6 +72,9 @@ collector:
     host: localhost
     port: 24224
     tag: my_tag
+    exclude_user_agents:
+      - "exclude_user_agent_1"
+      - "exclude_user_agent_2"
 watcher:
   adapter: MyWatcher
 filter:
