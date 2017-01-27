@@ -27,10 +27,11 @@ module Rack
             @logger = config["logger"] || Fluent::Logger::FluentLogger.new(tag_prefix, options)
             exclude_request = config["exclude_request"] || []
             @collect = [GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS, LINK, UNLINK, TRACE] - exclude_request
+            @exclude_ua_list = config["exclude_user_agents"] || []
           end
 
           def collect?(env)
-            @collect.include?(env["REQUEST_METHOD"])
+            !@exclude_ua_list.include?(env["HTTP_USER_AGENT"]) && @collect.include?(env["REQUEST_METHOD"])
           end
 
           def collect(log)
